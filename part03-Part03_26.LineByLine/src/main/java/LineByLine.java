@@ -1,0 +1,25 @@
+
+import java.util.Scanner;
+
+public class LineByLine {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        while(true){
+            String input = scanner.nextLine();
+        
+            String[] splitStringArray = input.split(" ");
+        
+            for (String e: splitStringArray ){
+                System.out.println(e);
+            }
+            if(input.equals("")){
+                break;
+            }
+        }
+        
+
+
+    }
+}
