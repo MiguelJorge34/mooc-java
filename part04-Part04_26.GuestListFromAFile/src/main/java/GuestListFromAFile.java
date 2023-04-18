@@ -1,18 +1,28 @@
 
+import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GuestListFromAFile {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Name of the file:");
         String file = scanner.nextLine();
 
         ArrayList<String> list = new ArrayList<>();
-        // implement reading the file here.
+         try(Scanner input = new Scanner (Paths.get(file))){
+            while(input.hasNextLine()){
+                String names = input.nextLine();
+                
+                list.add(names);
+            }
+        }catch(Exception e){
+             System.out.println("Erro:"+e.getMessage());
+        }
+       
         System.out.println("");
 
         System.out.println("Enter names, an empty line quits.");
