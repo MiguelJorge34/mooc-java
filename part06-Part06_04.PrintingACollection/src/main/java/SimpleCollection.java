@@ -19,4 +19,27 @@ public class SimpleCollection {
         return this.elements;
     }
     
+    public String toString(){
+        String output = "";
+        
+        String listElements = "";
+        
+        for(String e: elements){
+           if (e.equals(elements.get(elements.size() - 1))) {
+                listElements += e;
+            } else {
+                listElements += e + "\n";
+            }
+        
+        }
+        if(elements.size() == 1){
+            output = "The collection " + this.name + " has 1 element:\n" + listElements;
+        }else if(elements.size() == 0){
+            output = "The collection " + this.name + " is empty.";
+        }else{
+            output =  "The collection " + this.name + " has " + elements.size() + " elements:\n" + listElements;
+        }
+        return output;
+    }
+    
 }
